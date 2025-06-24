@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SAMS ACADEMY</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+    }
+    .header {
+      background-color: #000;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .hero {
+      position: relative;
+      background: url('https://media.discordapp.net/attachments/1387081620992954398/1387139154210717727/289262955_2183177991847209_7908553981894044082_n.jpg?ex=685c4182&is=685af002&hm=0416a515a88163b51c99591b4037b57e4e5906e147ff81ac550c1b3a6212e53a&=&format=webp') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      color: white;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 30px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 2;
+    }
+    .hero-overlay h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .hero h2 {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      font-size: 18px;
+      margin: 0 auto;
+    }
+    .section {
+      padding: 0 30px 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .tabs {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tab-btn {
+      background-color: transparent;
+      color: white;
+      padding: 10px 25px;
+      border: 2px solid #e03b3b;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px;
+      min-width: 200px;
+      justify-content: center;
+    }
+    .tab-btn:hover {
+      background-color: #e03b3b;
+      color: white;
+    }
+    .content-block {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #555;
+    }
+    th, td {
+      padding: 10px;
+      text-align: right;
+    }
+    th {
+      background-color: #333;
+      color: #f0c040;
+    }
+  </style>
+  <script>
+    function toggleContent(id) {
+      const allContents = document.querySelectorAll('.content-block');
+      allContents.forEach(c => {
+        c.style.display = (c.id === id && c.style.display !== 'block') ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="header">
+    <img src="https://media.discordapp.net/attachments/1387081620992954398/1387137387846566019/9edef521-b6c8-452d-84fa-9e35338a52fc.png?ex=685c3fdd&is=685aee5d&hm=2e984c414c36e7038cc063e063abb931ab5f4a4c6b4f05cc33ef93f9fff0a8b6&=&format=webp&quality=lossless&width=968&height=968" class="logo-circle" alt="شعار SAMS ACADEMY" />
+  </div>
+
+  <div class="hero">
+    <h2>مرحبًا بكم في SAMS ACADEMY
+    نرحب بجميع المتقدمين للانضمام إلى فريق إسعاف SAMS. قبل بدء العمل الرسمي، نوفر لكم برنامج أكاديمية تدريب متخصص يهدف إلى تأهيلكم وتطوير مهاراتكم الطبية والعملية في مجال الإسعافات الأولية والطوارئ.
+    خلال فترة الأكاديمية، ستتلقون تدريبات نظرية وعملية على أعلى مستوى، بالإضافة إلى تقييم مستمر لضمان جاهزيتكم للعمل الميداني بكفاءة واحترافية.
+    هدفنا هو تجهيزكم بكل الأدوات والمعرفة التي تحتاجونها لتكونوا جزءًا فاعلًا من فريقنا في تقديم أفضل خدمات الطوارئ للمجتمع.</h2>
+  </div>
+
+  <div class="section">
+    <div class="tabs">
+      <button class="tab-btn" onclick="toggleContent('rules-content')">⭐ قوانين الأكاديمية</button>
+      <button class="tab-btn" onclick="toggleContent('ranks-content')">⭐ تسلسل رتب الأكاديمية</button>
+    </div>
+
+    <div class="content-block" id="rules-content">
+      <h3>📜 قوانين الأكاديمية:</h3>
+      <ol>
+        <li><strong>الالتزام بالحضور:</strong> يجب الحضور في الوقت المحدد لكل المحاضرات والتدريبات، وأي تأخير أو غياب بدون عذر مقبول يعرضك للاستبعاد من الأكاديمية.</li>
+        <li><strong>الانضباط والسلوك المهني:</strong> يُتوقع من جميع المتدربين الالتزام بسلوك محترم ومهني داخل الأكاديمية ومع الزملاء والمدربين.</li>
+        <li><strong>اتباع التعليمات:</strong> يجب تنفيذ جميع تعليمات المدربين والمشرفين بدقة، سواء في التدريب النظري أو العملي.</li>
+        <li><strong>الزي الرسمي:</strong> الالتزام بالزي المحدد للأكاديمية (إن وُجد) أمر إلزامي خلال فترة التدريب.</li>
+        <li><strong>منع إساءة استخدام المعدات:</strong> يُمنع استخدام أي معدات طبية أو مركبات إسعاف خارج نطاق التدريب، وأي مخالفة تعتبر انتهاكًا يستوجب الإيقاف.</li>
+        <li><strong>احترام الخصوصية:</strong> يُمنع تصوير أو نشر أي محتوى من داخل الأكاديمية دون إذن رسمي. كما يجب الحفاظ على سرية الحالات التدريبية.</li>
+        <li><strong>الاختبارات والتقييم:</strong> يخضع جميع المتدربين لاختبارات وتقييمات دورية، ويشترط اجتيازها للانتقال إلى المرحلة التالية أو القبول في التوظيف.</li>
+        <li><strong>الامتناع عن السلوك التخريبي أو السلبي:</strong> يمنع التسبب بأي فوضى، خلافات، أو تشويش أثناء التدريب، وأي سلوك غير لائق قد يؤدي إلى الطرد من البرنامج.</li>
+        <li><strong>التواصل الرسمي فقط:</strong> يجب استخدام قنوات الاتصال الرسمية المعتمدة للتواصل مع الإدارة والمدربين، ويمنع النشر العشوائي أو إرسال رسائل غير رسمية.</li>
+        <li><strong>الإخلاص والجدية:</strong> الأكاديمية خطوة حقيقية نحو التوظيف، لذلك يُتوقع من كل متدرب الجدية في التعلم، والرغبة الفعلية في أن يكون جزءًا من فريق الإسعاف.</li>
+      </ol>
+    </div>
+
+    <div class="content-block" id="ranks-content">
+      <h3>📌 تسلسل رتب أكاديمية SAMS:</h3>
+      <table>
+        <tr>
+          <th>الرتبة</th>
+          <th>الوصف</th>
+        </tr>
+        <tr>
+          <td>Academy Commander (قائد الأكاديمية)</td>
+          <td>أعلى رتبة في الأكاديمية، المسؤول عن إدارة جميع الأمور الإدارية والتنظيمية، وصنع القرارات الاستراتيجية. إشراف عام على التدريب والأنشطة الأكاديمية والتأكد من سير العمل بشكل صحيح.</td>
+        </tr>
+        <tr>
+          <td>Academy Deputy (نائب قائد الأكاديمية)</td>
+          <td>يساعد قائد الأكاديمية في إدارة الأك
